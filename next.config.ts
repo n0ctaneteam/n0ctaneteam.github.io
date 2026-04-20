@@ -1,10 +1,12 @@
 import { createMDX } from 'fumadocs-mdx/next'
-import { withBasePath } from '@/lib/env'
 
 const withMDX = createMDX()
 
 /** @type {import('next').NextConfig} */
 const config = {
+
+  basePath: "/",
+  
   reactStrictMode: true,
   output: 'export' as const, // ⭐ 必须
   images: {
@@ -18,13 +20,7 @@ const config = {
         as: '*.js',
       },
     },
-  },
-  ...(process.env.NODE_ENV === 'production'
-    ? {
-        basePath: withBasePath(''), // 仓库名
-        assetPrefix: withBasePath('/'), // 资源路径前缀
-      }
-    : {}),
+  }
 }
 
 export default withMDX(config)
