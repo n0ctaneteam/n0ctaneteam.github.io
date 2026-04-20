@@ -28,11 +28,11 @@ jobs:
         uses: pnpm/action-setup@v2
 
       - name: Set node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           # 根据需要设置 Node.js 版本
           # node-version: lts/*
-          node-version: '20.9.x'
+          node-version: '24'
           cache: pnpm
           registry-url: 'https://registry.npmjs.org'
 
