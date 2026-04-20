@@ -5,7 +5,7 @@ const withMDX = createMDX()
 /** @type {import('next').NextConfig} */
 const config = {
 
-  basePath: "/",
+  basePath: '',
   
   reactStrictMode: true,
   output: 'export' as const, // ⭐ 必须
